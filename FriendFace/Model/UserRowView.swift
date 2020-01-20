@@ -10,7 +10,8 @@ import SwiftUI
 
 struct UserRowView: View {
     
-    var user: User
+    var user: UserModel
+    //let userCoreData: User
     
     var body: some View {
         HStack {

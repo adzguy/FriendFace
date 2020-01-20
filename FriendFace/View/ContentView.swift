@@ -10,8 +10,23 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //@Environment(\.managedObjectContext) var moc
     @ObservedObject var network = Network()
+    //@FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     
+//    init() {
+//        for user in network.users {
+//            let userCd = User(context: moc)
+//            userCd.id = user.id
+//            userCd.name = user.name
+//            userCd.about = user.about
+//            userCd.address = user.address
+//            userCd.isActive = user.isActive
+//            userCd.company = user.company
+//
+//            try? moc.save()
+//        }
+//    }
     var body: some View {
         NavigationView {
             VStack{

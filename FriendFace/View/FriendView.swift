@@ -10,9 +10,9 @@ import SwiftUI
 
 struct FriendView: View {
     
-    var friend: Friend
-    var user: User
-    var users: [User]
+    var friend: FriendModel
+    var user: UserModel
+    var users: [UserModel]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -40,14 +40,14 @@ struct FriendView: View {
     }
     
     
-    init(friend: Friend, users: [User], user: User) {
+    init(friend: FriendModel, users: [UserModel], user: UserModel) {
         self.friend = friend
         self.users = users
         
-        var match = User(id: "", isActive: false, name: "", company: "", address: "", about: "", registered: "", friends: [friend], tags: user.tags)
+        var match = UserModel(id: "", isActive: false, name: "", company: "", address: "", about: "", registered: "", friends: [friend], tags: user.tags)
         for user in users {
             if friend.id == user.id {
-                match = User(id: user.id, isActive: user.isActive, name: user.name, company: user.company, address: user.address, about: user.about, registered: user.registered, friends: user.friends, tags: user.tags)
+                match = UserModel(id: user.id, isActive: user.isActive, name: user.name, company: user.company, address: user.address, about: user.about, registered: user.registered, friends: user.friends, tags: user.tags)
             }
         }
         self.user = match

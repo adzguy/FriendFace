@@ -10,8 +10,11 @@ import SwiftUI
 
 struct UserDetailView: View {
     
-    var user: User
-    var users: [User]
+    var user: UserModel
+    var users: [UserModel]
+    
+    //let userCoreData: User
+    //let userCoreDatas: [User]
     
     var body: some View {
         ScrollView(.vertical) {

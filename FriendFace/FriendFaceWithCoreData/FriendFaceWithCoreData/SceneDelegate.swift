@@ -1,14 +1,13 @@
 //
 //  SceneDelegate.swift
-//  FriendFace
+//  FriendFaceWithCoreData
 //
-//  Created by Davron on 1/13/20.
+//  Created by Davron on 1/19/20.
 //  Copyright © 2020 Davron. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
-import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = ContentView().environment(\.managedObjectContext, context)

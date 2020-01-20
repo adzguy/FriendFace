@@ -7,11 +7,12 @@
 //
 
 import Foundation
+//import SwiftUI
 
 class Network: ObservableObject {
     
-    //@Published var friends = FriendList(friends: [])
-    @Published var users = [User]()
+    //@Environment(\.managedObjectContext) var moc
+    @Published var users = [UserModel]()
     
     private let api = "https://www.hackingwithswift.com/samples/friendface.json"
     
@@ -33,7 +34,7 @@ class Network: ObservableObject {
             
             let decoder = JSONDecoder()
             
-            if let decodedData = try? decoder.decode([User].self, from: data) {
+            if let decodedData = try? decoder.decode([UserModel].self, from: data) {
                 //DispatchQueue.main.async {
                 self.users = decodedData
                 //}

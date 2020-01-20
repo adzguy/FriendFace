@@ -23,12 +23,20 @@ struct UserDetailView: View {
                     
                 Text("\(user.name)")
                     .font(.largeTitle)
+                HStack {
+                    Image(systemName: "house")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.gray)
+                    Text("\(user.address)")
+                    Spacer()
+                }
                 
-                Text("\(user.address)")
                 
                 Text("\(user.isActive ? "Active" : "Not Active")")
                     .foregroundColor(user.isActive ? .green : .red)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 25)
                 
                 
                 HStack{
@@ -36,20 +44,30 @@ struct UserDetailView: View {
                         .foregroundColor(.gray)
                     Spacer()
                 }
+                .padding(.bottom)
                 
                 Text("\(user.about)")
                 Spacer()
                 
-                Text("Friends")
-                    .foregroundColor(.gray)
+                HStack {
+                    Image(systemName: "person.3")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                    Text("Friends: \(user.friends.count)")
+                    //.foregroundColor(.gray)
+                    Spacer()
+                }
+                .foregroundColor(.gray)
+                
                 List(user.friends){friend in
                     NavigationLink(destination: FriendView(friend: friend, users: self.users, user: self.user) ){
                         HStack{
                             Image(systemName: "person.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 70, height: 70)
-                            
+                                .frame(width: 50, height: 50)
+                                
                             VStack{
                                 Text("\(friend.name)")
                                     .fontWeight(.medium )

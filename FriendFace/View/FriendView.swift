@@ -20,17 +20,26 @@ struct FriendView: View {
             Text("\(user.name)")
                 .font(.largeTitle)
             
-            Text("\(user.address)")
+            HStack {
+                Image(systemName: "house")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.gray)
+                Text("\(user.address)")
+                Spacer()
+            }
             
             Text("\(user.isActive ? "Active" : "Not Active")")
                 .foregroundColor(user.isActive ? .green : .red)
-                .padding(.bottom, 20)
+                .padding(.bottom, 25)
             
             HStack{
                 Text("About:")
                     .foregroundColor(.gray)
                 Spacer()
             }
+            .padding(.bottom)
             
             Text("\(user.about)")
             Spacer()

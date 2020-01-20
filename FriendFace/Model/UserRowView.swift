@@ -15,11 +15,12 @@ struct UserRowView: View {
     
     var body: some View {
         HStack {
+            
             Image(systemName: user.isActive ? "person.crop.circle.fill.badge.checkmark" : "person.crop.circle.fill.badge.xmark")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(user.isActive ? .green : .red)
-                .frame(width: 70, height: 70)
+                .frame(width: 65, height: 65)
 
             VStack{
                 HStack {

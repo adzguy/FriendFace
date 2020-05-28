@@ -1,6 +1,6 @@
-# Parsing Movie db JSON
+# Parsing JSON from API
 
-Saving data to local storage using Core Data framework. <br> 
+This iOS application fetches static API and saving data to local storage using CoreData framework. Compatibale wiht Xcode 11 and iOS 13. 
 
 # Demo
 ![](demo.gif)
